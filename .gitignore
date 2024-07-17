@@ -1,0 +1,13 @@
+.ipynb_checkpoints/*
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### VS Code ###
+.vscode/
+
+**/__pycache__
+
