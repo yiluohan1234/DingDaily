@@ -1,0 +1,30 @@
+name: dingDaily
+on:
+  schedule:
+    # UTC 时间的十二点，北京时间的二十点。但是由于 Github 同一时间任务太多，因此会有延迟*/15 1-4 * * *
+    - cron:  '0 12 * * *'
+
+jobs:
+  send_message:
+    runs-on: ubuntu-latest
+    name: send morning to your girlfriend
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+      - name: set timezone
+        uses: szenius/set-timezone@v1.0
+        with:
+          timezoneLinux: "Asia/Shanghai"
+      - name: setup python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.9.18'
+          cache: 'pip'
+          cache-dependency-path: '**/requirements.txt'
+      - run: pip install -r ./requirements.txt
+      - run: python main.py
+
+    env:
+      TOKEN: ${{ secrets.TOKEN }}
+      SECRET: ${{ secrets.SECRET }}
