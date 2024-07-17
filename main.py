@@ -196,7 +196,7 @@ def func(code):
     send_markdown(code=code, trade_type='BUY')
     send_markdown(code=code, trade_type='SELL')
 
-if __name__ =='__main__':
-    code_list = ['000977', '000612', '601877']
-    for code in code_list:
-        func(code)
+
+code_list = ['000977', '000612', '601877']
+for code in code_list:
+    func(code)
