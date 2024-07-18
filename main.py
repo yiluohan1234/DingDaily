@@ -158,7 +158,7 @@ def send_markdown(code, trade_type):
         # 发送markdown
         sub_key = "key_" + str(code) + str(current_time) + str(trade_type)
         yesterday = (now - datetime.timedelta(days=1)).strftime('%Y-%m-%d')
-        if current_date == yesterday and sub_key not in send_set:
+        if current_time == yesterday and sub_key not in send_set:
             # 加入set
             send_set.add(sub_key)
             # 计算数据
