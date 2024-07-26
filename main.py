@@ -75,9 +75,8 @@ def find_max_min_point(df, k_name='k10'):
     mins, _ = find_peaks(series*-1, distance=mindis)
 
     dt = {}
-    condition_buy = (df[k_name].index.isin(mins.tolist())) & (df[k_name] < 0) & (df['MACD'] < 0)
-    condition_sell = (df[k_name].index.isin(peaks.tolist())) & (df[k_name] > 0) & (df['MACD'] > 0)
-
+    condition_buy = (df[k_name].index.isin(mins.tolist())) & (df[k_name] < 0)
+    condition_sell = (df[k_name].index.isin(peaks.tolist())) & (df[k_name] > 0)
     dt['BUY'], dt['SELL'] = condition_buy, condition_sell
     ret = pd.DataFrame(dt)
     return ret
