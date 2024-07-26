@@ -197,6 +197,6 @@ def func(code):
     send_markdown(code=code, trade_type='SELL')
 
 
-code_list = ['000977', '000612', '601877']
+code_list = ["000977", "000737", "603993", "002460", "601877", "002948", "600595", "000612"]
 for code in code_list:
     func(code)
