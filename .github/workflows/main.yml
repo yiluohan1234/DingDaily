@@ -13,7 +13,7 @@ jobs:
       - name: checkout
         uses: actions/checkout@v4
       - name: set timezone
-        uses: szenius/set-timezone@v1.0
+        uses: szenius/set-timezone@v1.2
         with:
           timezoneLinux: "Asia/Shanghai"
       - name: setup python
