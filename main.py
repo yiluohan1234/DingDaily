@@ -18,7 +18,6 @@ import os
 
 token = os.environ["TOKEN"]
 secret = os.environ["SECRET"]
-code = os.environ["CODE"]
 send_set = set()
 transfer_date_dic = {'D': 'daily', 'W': 'weekly', 'M': 'monthly'}
 def RD(N,D=3):   return np.round(N,D)
@@ -196,8 +195,6 @@ def func(code):
     send_markdown(code=code, trade_type='BUY')
     send_markdown(code=code, trade_type='SELL')
 
-print(code)
-print(type(code))
 code_list = ["000977", "000737", "603993", "002460", "601877", "002948", "600595", "000612"]
 for code in code_list:
     func(code)
